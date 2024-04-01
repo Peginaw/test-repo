@@ -1,0 +1,63 @@
+.parent {
+    position: relative;
+    background-color: darkblue;
+    width: 300px;
+    height: 300px;
+}
+
+/* Box*/
+.child-box {
+    position: absolute;
+    background-color: red;
+    width: 50%;
+    height: 50%;
+    animation: left-to-right 1s ease-in infinite alternate;
+
+}
+.parent:hover .child-box {
+    animation-play-state: paused;
+}
+@keyframes left-to-right {
+    0% {
+        transform: translateX(0)
+    }
+    33% {
+        transform: translateY(100%);
+    }
+    66% {
+        transform: translateY(100%) translateX(100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+    
+}
+
+/* Dot*/
+.child-dot {
+    position: absolute;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 100px;
+    animation: bouncing-ball 1s ease-in-out infinite;
+}
+@keyframes bouncing-ball {
+    0%{
+        transform: translateY(0);
+    }
+    29% {
+        height: 100px;
+    }
+    50% {
+        transform: translateY(250px);
+        height: 50px;
+    }
+    70% {
+        height: 100px;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
